@@ -6,9 +6,9 @@ import Redirect from "./components/Redirect";
 import CreateLink from "./components/createLink";
 import NavBar from "./components/NavBar";
 import Admin from "./components/Admin";
-import ListOfLink from "./ListOfLinks";
-import UpdateLinks from "./UpdateLinks";
-import DeleteLink from "./DeleteLink";
+import ListOfLink from "./components/ListOfLinks";
+import UpdateLinks from "./components/UpdateLinks";
+import DeleteLink from "./components/DeleteLink";
 import './App.css';
 import BackgroundAnimation from "./components/BackgroundAnimation";
 
