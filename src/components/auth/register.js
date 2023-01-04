@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router";
-
+import  {BASE_URL} from '../base';
 function Register() {
     const navigate = useNavigate()
     const [email , setEmail] = useState([])
     const [pass , setPass] = useState([])
     const formHandler = async (e) => {
         e.preventDefault()
-        const res = await fetch("http://link.pishroapp.net/register", {
+        const res = await fetch(`${BASE_URL}/register`, {
             method : "POST" ,
             body: JSON.stringify({
                 email: email,

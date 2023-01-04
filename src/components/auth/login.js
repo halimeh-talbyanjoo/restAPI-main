@@ -22,7 +22,7 @@ function Login() {
         // اینجا به ما یه توکن میده که باید اون رو توی لوکال استورج ذخیره کرد
         // console.log(data?.data?.token)
         localStorage.setItem('token' , data?.data?.token)
-        navigate('/redirect')
+        navigate('/')
     }
 
     // این همینجا تموم میشه یعنی ما توکن رو میگیریم یه جا ذخیرع میکنیم
