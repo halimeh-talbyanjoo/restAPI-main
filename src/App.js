@@ -6,9 +6,9 @@ import Redirect from "./components/Redirect";
 import CreateLink from "./components/createLink";
 import NavBar from "./components/NavBar";
 import Admin from "./components/Admin";
-import ListOfLink from "./ListOfLinks";
-import UpdateLinks from "./UpdateLinks";
-import DeleteLink from "./DeleteLink";
+import ListOfLink from "./components/ListOfLinks";
+import UpdateLinks from "./components/UpdateLinks";
+import DeleteLink from "./components/DeleteLink";
 import './App.css';
 import BackgroundAnimation from "./components/BackgroundAnimation";
 
@@ -23,13 +23,15 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<CreateLink />}/>
-                <Route path="login" element={<Login />}/>
-                <Route path="register" element={<Register />}/>
+                <Route path="/auth/login" element={<Login />}/>
+                <Route path="/auth/register" element={<Register />}/>
                 <Route path="redirect" element={<Redirect />}/>
-                <Route path="admin" element={<Admin />}/>
-                <Route path="list-links" element={<ListOfLink />}/>
-                <Route path="update-link" element={<UpdateLinks />}/>
-                <Route path="delete-link?id=12" element={<DeleteLink />}/>
+                {/*todo change Admin to Profile*/}
+                <Route path="profile" element={<Admin />}/>
+                <Route path="link/list" element={<ListOfLink />}/>
+                {/*todo two following routes should take the {id}*/}
+                <Route path="link/update" element={<UpdateLinks />}/>
+                <Route path="link/delete" element={<DeleteLink />}/>
                 
             </Routes>
         </BrowserRouter>
