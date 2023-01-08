@@ -19,7 +19,7 @@ function Register() {
         alert(data.message)
         // اینجا اول میای ریجستر میکنی بعد میری باهمین ایمل لاگین میکنی  همین و بس
         if(data.data){
-            navigate('/login')
+            navigate('/auth/login')
         }
     }
 

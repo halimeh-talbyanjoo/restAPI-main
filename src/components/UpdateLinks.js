@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import  {BASE_URL} from './base';
 
 const UpdateLinks = () => {
     const [id, setId] = useState([])
@@ -9,7 +10,7 @@ const UpdateLinks = () => {
   const updateLinks = async (e) => {
     e.preventDefault()
 
-    const res = await fetch("http://link.pishroapp.net/update-link" , {
+    const res = await fetch(`${BASE_URL}/update-link` , {
         hheaders: {
             token
         },

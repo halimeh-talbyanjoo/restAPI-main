@@ -8,7 +8,7 @@ const DeleteLink = () => {
     e.preventDefault()
 
     const res = await fetch("http://localhost:8082/delete-link?id=12" , {
-        hheaders: {
+        headers: {
             token
         },
         method : "DELETE" 

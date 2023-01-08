@@ -1,4 +1,5 @@
 import React from "react";
+import  {BASE_URL} from './base';
 
 const Admin=()=> {
 
@@ -6,7 +7,7 @@ const Admin=()=> {
   const logOut = async (e) => {
     e.preventDefault()
 
-    const res = await fetch("http://link.pishroapp.net/profile" , {
+    const res = await fetch(`${BASE_URL}/profile` , {
        
         method : "GET" 
         

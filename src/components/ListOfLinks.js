@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import  {BASE_URL} from './base';
 
 const ListOfLink=()=> {
 
@@ -8,7 +9,7 @@ const ListOfLink=()=> {
   const listOfLink = async (e) => {
     e.preventDefault()
 
-    const res = await fetch("http://link.pishroapp.net/list-links" , {
+    const res = await fetch(`${BASE_URL}/list-links` , {
         headers: {
             token
         },

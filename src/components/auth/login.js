@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router";
+import  {BASE_URL} from '../base';
 
 function Login() {
 
@@ -9,7 +10,7 @@ function Login() {
     const formHandler = async (e) => {
 
         e.preventDefault()
-        const res = await fetch("http://link.pishroapp.net/login", {
+        const res = await fetch(`${BASE_URL}/login`, {
             method : "POST" ,
             body: JSON.stringify({
                 email: email,

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import BackgroundAnimation from "./BackgroundAnimation"
 import {useNavigate} from "react-router";
+import  {BASE_URL} from './base';
 
 
 
-const CreateLink =()=> {
+const CreateLink =({setInputValue})=> {
     const navigate = useNavigate()
     const [url, setUrl] = useState([])
     const [token] = useState(localStorage.getItem('token'))
@@ -12,7 +12,7 @@ const CreateLink =()=> {
     const getUrl = async (e) => {
         e.preventDefault()
 
-        const res = await fetch("http://link.pishroapp.net/create-link" , {
+        const res = await fetch(`${BASE_URL}/create-link` , {
             headers: {
                 token
             },
@@ -22,11 +22,13 @@ const CreateLink =()=> {
             }
         })
         const data = await res.json()
-        console.log(data)
+        console.log(url)
         alert(data.message)
-        if(data.data){
-            navigate('/login')
-        }
+        setInputValue([url])
+        console.log(setInputValue)
+        // if(data.data){
+        //     navigate('/login')
+        // }
     }
     
     return (
@@ -35,7 +37,7 @@ const CreateLink =()=> {
                   className="col-5 bg-danger flex-wrap d-flex justify-content-center align-items-center p-2 ">
         <label className="col-12   p-2 d-flex justify-content-center align-items-center ">
             <input type="text" className="col-12 p-2 rounded" placeholder="http://example.com"
-                   onInput={e => setUrl(e.target.value)}/>
+                   onChange={e => setUrl(e.target.value)}/>
         </label>
         <div className="col-12 d-flex justify-content-center align-items-center my-2">
             <button className="btn btn-success"  >create</button>
